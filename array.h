@@ -40,22 +40,4 @@ Array<T>::~Array() {
     delete [] pt;
 }
 
-template <class T>
-void Array<T>::LlenarAleatorio() {
-    srand(time(NULL));
-    int i = 0;
-    while (i < nElementos) {
-        int t = 1 + rand() % 100;
-        pt[i] = t;
-        i++;
-    }
-}
-
-template <class T>
-void Array<T>::MostrarFL(){
-    cout << "Primer elemento: "<< pt[0] << endl;
-    cout << "Elemento en el medio: "<< pt[nElementos/2] << endl;
-    cout << "Ultimo elemento: "<< pt[nElementos -1] << endl;
-    
-}
 #endif	/* ARRAY_H */

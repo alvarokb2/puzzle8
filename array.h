@@ -18,9 +18,8 @@ class Array {
 public:
     Array(int nElem);
     ~Array();
-    void LlenarAleatorio();
-    void MostrarFL();
-
+    Mostrar();
+    
     T& operator[](int index) {
         return pt[index];
     }
@@ -39,5 +38,15 @@ template <class T>
 Array<T>::~Array() {
     delete [] pt;
 }
+
+template <class T>
+Array<T>::Mostrar() {
+    for(int i = 0; i < nElementos; i++){
+        cout << pt[i]<< " ";
+        if(i%3 = 2)
+            cout <<endl;        
+    }
+}
+
 
 #endif	/* ARRAY_H */

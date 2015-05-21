@@ -18,7 +18,6 @@ int main(int argc, char** argv) {
     puzzle a;
 
     a.Shuffle();
-    
     a.solve();
     a.Mostrar();
     return 0;

@@ -30,7 +30,7 @@ public:
 
     // movimientos    
 
-    void Shuffle(); // revuelve el puzzle
+    void Shuffle(); // mezcla el puzzle
     bool canLeft(); // puede moverse a la izquierda el 0?
     void moveLeft(); // mueve el cero a la izquierda
     bool canRight(); // puede moverse a la derecha el 0?
@@ -43,10 +43,10 @@ public:
     // resolucion
 
     bool solved(); // esta resuelto el puzzle?
-    void getNext(); // obtiene el movimiento siguiente
-    int distance(int _value); // mide distancia del valor + distancia del cero a su posicion ideal
+    void getNext(); // obtiene el movimiento siguiente (menor distancia posible)
+    int distance(int _value); // mide distancia del valor a su indice ideal
     int distanceS(); // suma las distancias de cada indice
-    void solve();
+    void solve(); //resuelve el puzzle
 };
 
 // constructor
@@ -212,8 +212,10 @@ void puzzle::getNext() {
     int response = 0;
     cout << "llamada con: " << endl;
     Mostrar();
+    cout << "posibles movimientos:"<< endl;
     if (canLeft()) {
         moveLeft();
+        Mostrar();
         aux = distanceS();
         if (aux <= decision) {
             decision = aux;
@@ -224,6 +226,7 @@ void puzzle::getNext() {
     }
     if (canRight()) {
         moveRight();
+        Mostrar();
         aux = distanceS();
         if (aux <= decision) {
             decision = aux;
@@ -234,6 +237,7 @@ void puzzle::getNext() {
     }
     if (canTop()) {
         moveTop();
+        Mostrar();
         aux = distanceS();
         if (aux <= decision) {
             decision = aux;
@@ -244,6 +248,7 @@ void puzzle::getNext() {
     }
     if (canBottom()) {
         moveBottom();
+        Mostrar();
         aux = distanceS();
         if (aux <= decision) {
             decision = aux;

@@ -278,7 +278,6 @@ void puzzle::getNext() {
             
             break;
     }
-    cout << "decision: " << decision << " movido" << endl;
 }
 
 int puzzle::distance(int _value) {
